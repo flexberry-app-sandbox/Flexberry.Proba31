@@ -1,0 +1,106 @@
+﻿{
+  "name": "IISProba3Город",
+  "modelName": "i-i-s-proba3-город",
+  "className": "Город",
+  "nameSpace": "IIS.Proba3",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "назв",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "улица",
+      "relatedTo": "i-i-s-proba3-улица",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ГородE",
+      "modelName": "i-i-s-proba3-город",
+      "attrs": [
+        {
+          "name": "назв",
+          "caption": "Назв",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Назв",
+          "lookupValueField": "назв",
+          "relationName": "Улица",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "назв",
+              "caption": "Назв",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Улица",
+          "name": "улица",
+          "relatedTo": "i-i-s-proba3-улица",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "ГородL",
+      "modelName": "i-i-s-proba3-город",
+      "attrs": [
+        {
+          "name": "назв",
+          "caption": "Назв",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Улица",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "назв",
+              "caption": "Назв",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Назв",
+          "name": "улица",
+          "relatedTo": "i-i-s-proba3-улица",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

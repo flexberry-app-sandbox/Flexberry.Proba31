@@ -1,0 +1,1 @@
+docker-compose -p proba3 down
